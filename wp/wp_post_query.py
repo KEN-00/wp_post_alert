@@ -45,7 +45,7 @@ def get_pending_posts(db, targetCategories, targetPostStatuses):
     
     query = PENDING_POSTS_QUERY_TEMPLATE.format(targetCategoriesListStr, targetPostStatusesListStr)
 
-    cursor = db.cursor()
+    cursor = db.cursor(dictionary=True)
     cursor.execute(query)
 
     return cursor.fetchall()

@@ -1,0 +1,29 @@
+{% macro renderValue(value) -%}
+    {{ value|default('') }}
+{%- endmacro %}
+
+{% if mailContentData %}
+    <div class="table-container">
+        <table class="table" border="1">    
+            <tr>
+                <td>Post ID</td>
+                <td>Title</td>
+                <td>Date</td>
+                <td>Post URL</td>
+            </tr>
+
+        {% for data in mailContentData %}
+            <tr>
+                <td>{{ renderValue(data.post_id) }}</td>
+                <td>{{ renderValue(data.post_title) }}</td>
+                <td>{{ renderValue(data.post_date) }}</td>
+                <td>{{ renderValue(data.post_url) }}</td>
+            </tr>
+        {% endfor %}
+
+
+        </table>
+    </div>
+{% else %}
+    no data
+{% endif %}
