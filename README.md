@@ -36,8 +36,8 @@ A set of environment variables define the file paths of the configuration files 
 | host|  MySQL host |  
 | port|  MySQL port |  
 | database|  MySQL database name |  
-| targetCategories|  IDs of WordPress post categories to be query (list of int) |  
-| targetPostStatuses|  [statuses](https://wordpress.org/support/article/post-status/) of post to be query (list of string) |  
+| targetCategories|  IDs of WordPress post categories to be quried (list of int) |  
+| targetPostStatuses|  [statuses](https://wordpress.org/support/article/post-status/) of WordPress posts to be quried (list of string) |  
 
 ### Mail Config
 `mail_config.json`:
