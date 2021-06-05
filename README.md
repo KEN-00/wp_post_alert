@@ -38,7 +38,9 @@ A set of environment variables define the file paths of the configuration files 
 | database|  MySQL database name |  
 | targetCategories|  IDs of WordPress post categories to be quried (list of int) |  
 | targetPostStatuses|  [statuses](https://wordpress.org/support/article/post-status/) of WordPress posts to be quried (list of string) |  
-Default post_status values in WordPress database [wp_posts](https://codex.wordpress.org/Database_Description#Table:_wp_posts) table: `publish`, `future`, `draft`, `pending`, `private`
+
+`targetPostStatuses` specifies  
+Default post_status values in WordPress database [wp_posts](https://codex.wordpress.org/Database_Description#Table:_wp_posts) table: `publish`, `future`, `draft`, `pending`, `private`.
 ### Mail Config
 `mail_config.json`:
 `````json
