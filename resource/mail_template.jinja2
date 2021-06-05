@@ -17,7 +17,11 @@
                 <td>{{ renderValue(data.post_id) }}</td>
                 <td>{{ renderValue(data.post_title) }}</td>
                 <td>{{ renderValue(data.post_date) }}</td>
-                <td>{{ renderValue(data.post_url) }}</td>
+                <td>
+                    {% if data.post_url %}
+                        <a href="{{ data.post_url }}">{{ data.post_url }}</a>
+                    {% endif %}
+                </td>
             </tr>
         {% endfor %}
 
