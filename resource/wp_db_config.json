@@ -1,0 +1,9 @@
+{
+    "userName": "bn_wordpress",
+    "password": "password",
+    "host": "127.0.0.1",
+    "port": "3306",
+    "database": "bitnami_wordpress",
+    "targetCategories":[1],
+    "targetPostStatuses":["pending"]
+}
