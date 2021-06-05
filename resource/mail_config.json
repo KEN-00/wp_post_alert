@@ -3,5 +3,6 @@
     "port":465,
     "userName":"",
     "password":"",
-    "recipients":[]
+    "recipients":[],
+    "subject":"WordPress Alert"
 }

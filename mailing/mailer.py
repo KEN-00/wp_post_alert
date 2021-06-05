@@ -3,16 +3,25 @@ from . import mail_content
 
 def send(mailConfig, mailContentData, jinja2MailTemplateString):
     server = get_smtp_server(mailConfig)
+    fromAddr = mailConfig['userName']
     recipients = mailConfig['recipients']
+    subject = mailConfig['subject']
 
-    template = mail_content.create_jinja2_mail_template(jinja2MailTemplateString)
-    content = mail_content.create_mail_content(
-        mailContentData,
-        template
+    emailMsg = mail_content.create_email_message(
+        subject=subject, 
+        fromAddr=fromAddr, 
+        toAddrs=recipients, 
+        mailContentData=mailContentData, 
+        jinja2MailTemplateString=jinja2MailTemplateString
     )
 
     # TODO: send email
     # print(content)
+    server.send_message(
+        from_addr=fromAddr,
+        to_addrs = recipients,
+        msg=emailMsg
+    )
 
     server.close()
     pass
@@ -41,6 +50,7 @@ def validate_mail_config(mailConfig):
         mailConfig['server']
         mailConfig['port']
         mailConfig['recipients']
+        mailConfig['subject']
     except KeyError as k:
         print ('mail config {} is missing, please set {} in config'.format(k, k))
         exit()
